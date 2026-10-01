@@ -1,48 +1,29 @@
-# Containing Files
-
-1. The LICENSE file:
-In most cases, the license for SAP sample projects is `Apache 2.0`.
-
-2. The REUSE.toml file: 
-The [Reuse Tool](https://reuse.software/) must be used for your samples project. You can find the REUSE.toml in the project initial. Please replace the parts inside the single angle quotation marks < > by the specific information for your repository.
-
-3. The README.md file (this file):
-Please edit this file as it is the primary description file for your project. You can find some placeholder titles for sections below.
-
-# Session ID - Session Title
+# TM266 - From Intent to Extension: SAP Agents with Joule in Cloud ER
 
 ## Description
 
-This repository contains the material for the SAP TechEd 2026 session called Session ID - Session Title.  
+This repository contains the material for the SAP TechEd 2026 session called TM266 - From Intent to Extension: SAP Agents with Joule in Cloud ERP.
 
 ## Overview
 
-This session introduces attendees to...
+Experience intent-based development in action. This session demonstrates how SAP Joule Works redefines agent extensibility on SAP Autonomous Suite — where natural language becomes working code. You will take a pre-delivered SAP agent and make it yours: connect additional data sources and add custom business logic guided by intent. Leave with patterns and confidence to build extensions that go beyond the pre-delivered.
 
 ## Requirements
 
-The requirements to follow the exercises in this repository are...
+All system access required for this session will be provided to you. During the hands-on you will be working with:
+- SAP S/4HANA Cloud, Public Edition with pre-delivered Journal Entry Agent
+- SAP Joule Works
 
 ## Exercises
 
 Provide the exercise content here directly in README.md using [markdown](https://guides.github.com/features/mastering-markdown/) and linking to the specific exercise pages, below is an example.
 
-- [Getting Started](exercises/ex0/)
-- [Exercise 1 - First Exercise Description](exercises/ex1/)
-    - [Exercise 1.1 - Exercise 1 Sub Exercise 1 Description](exercises/ex1#exercise-11-sub-exercise-1-description)
-    - [Exercise 1.2 - Exercise 1 Sub Exercise 2 Description](exercises/ex1#exercise-12-sub-exercise-2-description)
-- [Exercise 2 - Second Exercise Description](exercises/ex2/)
+- [Exercise 1 - Run the Standard Out-of-the-Box Journal Entry Agent](exercises/ex1/)
+    - [Exercise 1.1 - Trigger the Journal Entry Agent in Joule with a natural language prompt](exercises/ex1#exercise-11-sub-exercise-1-description)
+    - [Exercise 1.2 - Verify the proposal and post the document in SAP S/4HANA Cloud, Public Edition](exercises/ex1#exercise-12-sub-exercise-2-description)
+- [Exercise 2 - Extend the Agent with Intent using SAP Joule Studio](exercises/ex2/)
     - [Exercise 2.1 - Exercise 2 Sub Exercise 1 Description](exercises/ex2#exercise-21-sub-exercise-1-description)
     - [Exercise 2.2 - Exercise 2 Sub Exercise 2 Description](exercises/ex2#exercise-22-sub-exercise-2-description)
-
-  
-**OR** Link to the Tutorial Navigator for example...
-
-Start the exercises [here](https://developers.sap.com/tutorials/abap-environment-trial-onboarding.html).
-
-**IMPORTANT**
-
-Your repo must contain the .reuse and LICENSES folder and the License section below. DO NOT REMOVE the section or folders/files. Also, remove all unused template assets(images, folders, etc) from the exercises folder. 
 
 ## Contributing
 Please read the [CONTRIBUTING.md](./CONTRIBUTING.md) to understand the contribution guidelines.
