@@ -1,4 +1,4 @@
-# TM266 - From Intent to Extension: SAP Agents with Joule in Cloud ER
+# TM266 - From Intent to Extension: SAP Agents with Joule in Cloud ERP
 
 ## Description
 
