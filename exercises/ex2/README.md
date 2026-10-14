@@ -41,21 +41,32 @@ Joule Studio is the development environment within SAP Joule Works where you cre
 1. Log in to SAP Joule Works using the credentials provided at your desk.
 
 2. In the left navigation panel, select **Joule Studio**.
+   
 <br>![](/exercises/ex2/images/ex2_1_01_joule_studio_nav.png)
 
 3. On the Joule Studio home screen, select **New → Extension**.
+   
 <br>![](/exercises/ex2/images/ex2_1_02_new_extension.png)
 
-4. In the dialog that appears, select **New Solution** and enter a unique name — use `TM266-XX` where `XX` is your participant number from your desk card. The solution acts as a container for your extension project and all its artifacts.
-<br>![](/exercises/ex2/images/ex2_1_03_new_solution_dialog.png)
+<br>![](/exercises/ex2/images/ex2_1_02_new_extension1.png)
 
-5. Open the **Agent Catalog** and search for the **Journal Entry Agent**. Select it to open the agent detail page.
+4.In the Create an Agent Extension dialog that appears:
+
+  1. Solution — keep it set to New Solution
+  2. Name — replace **TM266-XXX** with your participant ID, for example TM266-001
+  3. Agent — click the icon next to the **Select Agent** field to open the **Agent Catalog**
+  4. Intent Statement — leave this for the next step
+
+ <br>![](/exercises/ex2/images/ex2_1_03_new_solution_dialog.png)
+
+5. The Agent Catalog opens showing all available SAP prebuilt agents. In the search box, type "**Journal entry**" to filter the results. From the results, locate the **Journal Entry Agent (S4H PuC, V 1.0.1)** and click **Add **to select it and return to the previous dialog.
 
    > **Note:** The Agent Catalog shows all pre-delivered agents available in your landscape that have been published as extensible. Only agents marked as extensible can be extended through Joule Studio.
+   
+ <br>![](/exercises/ex2/images/ex2_1_03_new_solution_dialog1.png)
 
-<br>![](/exercises/ex2/images/ex2_1_04_agent_catalog.png)
+6.Review the available Extension Points on the agent detail page — you will see Instruction as this is currently GA. Pre-hooks, Post-hooks, and MCP Servers are planned for release after GA post-TechEd, but we will create the extension using all these extension points to showcase the full process. Next click **Select Agent**.
 
-6. Review the available **Extension Points** on the agent detail page — you will see: Instruction, Pre-hooks, Post-hooks, and MCP Servers. These are the four layers you will configure in this exercise.
 <br>![](/exercises/ex2/images/ex2_1_05_extension_points.png)
 
 ## Exercise 2.2 - Enter Your Intent Statement
@@ -64,16 +75,26 @@ After completing these steps you will have submitted your business requirements 
 
 The Intent Statement is the starting point for everything Joule Studio builds. Instead of navigating configuration screens manually, you describe what your extension should do in plain business language. Joule Studio analyzes your input and generates a complete extension specification — including business rules, data connections, and workflow hooks — ready for you to review and refine.
 
-1. In the **Intent Statement** box, enter the following prompt exactly as shown:
+1. Back in the Create an Agent Extension dialog, you will now see the **Journal Entry Agent** populated in the **Agent field** and your participant ID in the **Name** field. In the Intent Statement field, copy and paste the following.  Once done, click **Create** to proceed.
 
-   > *Extend the Journal Entry Agent to flag GL postings above €15,000 before posting, look up existing journal entry line items for the same cost center and GL account, validate the combination of cost center, GL account, profit center, and segment, and generate an HTML summary report after each successful posting.*
+Note- Make sure Quick Create is **NOT** selected. Quick Create generates an extension immediately with minimal guidance. Leaving it off activates Intent-Based Development (IBD), which walks you through a structured design flow and produces a richer, more accurate specification based on your input.
+
+ 
+   > Before processing any journal entry, check if any line item amount exceeds €75,000. If it does, pause and ask the user for explicit approval before continuing.
+   > 
+   > Once approved, validate the uploaded journal entry proposal against historical journal entry posting patterns in SAP S/4HANA Cloud Public Edition.To do this, query the Universal Journal — the single source of truth    for all financial postings in S/4HANA Cloud — through the MCP tool to retrieve historical posting data. For each line item, compare the combination of Company Code, G/L Account, Cost Center, Profit Center, and Segment with previously posted journal entries.
+   > 
+   >Tag each line as:
+   > - Commonly Used — the accounting combination is frequently used in historical postings
+   > - Rare Pattern — the combination exists but is uncommon or differs from the normal posting pattern
+   > - No Historical Match — no historical posting with the same accounting combination exists
+   > 
+   > For the validation outcome, automatically accept lines tagged as Commonly Used. For Rare Pattern and No Historical Match, provide an explanation and suggest commonly used historical combinations where available.
+   > 
+   > Once validation is complete, generate a local HTML summary file and open it automatically in the browser. The summary shows a color-coded table — green for accepted lines, yellow for rare patterns, red for no historical match — along with the document number, timestamp, and suggestions for any flagged lines.
 
 <br>![](/exercises/ex2/images/ex2_2_01_intent_statement.png)
 
-2. Make sure **Quick Create is NOT selected**. Quick Create generates an extension immediately with minimal guidance. Leaving it off activates Intent-Based Development (IBD), which walks you through a structured design flow and produces a richer, more accurate specification based on your input.
-<br>![](/exercises/ex2/images/ex2_2_02_quick_create_off.png)
-
-3. Select **Continue**.
 
 ## Exercise 2.3 - Review and Accept the Generated Specification
 
