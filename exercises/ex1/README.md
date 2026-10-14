@@ -80,30 +80,52 @@ After completing these steps you will have submitted a journal entry request to 
 
    > **Note:** The exact URL will be provided by the instructor and is printed on the card at your desk.
 
-2. Log in using the credentials provided at your desk:
+2. Log in using the credentials provided by the instructor:
 
    | Field | Value |
    |-------|-------|
-   | User  | `TM266-XX` *(where XX is your participant number)* |
-   | Password | *(as provided on your desk card)* |
+   | User  | `TM266-XXX` *(where XXX is your participant number)* |
+   | Password | *(as provided by the instructor)* |
 
 <br>![](/exercises/ex1/images/ex1_1_01_login.png)
 
 3. Once logged in, the Joule Works chat window opens.
+   
 <br>![](/exercises/ex1/images/ex1_1_02_joule_home.png)
 
-4. In the chat window, enter the following prompt:
+4. In the chat window, enter the following prompt: **@Financial Closing Assistant Create Journal Entry Proposal from File**. By using @Financial Closing Assistant we are invoking the agent, and Create Journal Entry Proposal from File is the natural language prompt that tells the agent which action to execute.
+   
+ <br>![](/exercises/ex1/images/ex1_1_03_prompt_entry.png)
+  
+5. Download the sample file from GitHub (placeholder location), save it to your desktop. Open the file and replace the header text **TM266-xxx** with your participant ID — for example, TM266-001 — then verify your data matches the structure shown below before uploading.
 
-   ```
-   Post JE – CC 4400 – GL 618000 – €75,000 intercompany
-   ```
+<br>![](/exercises/ex1/images/ex1_1_04_agent_response2.png)
 
-<br>![](/exercises/ex1/images/ex1_1_03_prompt_entry.png)
+6. The agent responds by prompting for a file upload — **click Select your files or drag and drop your Excel (.xlsx, .xls) or CSV (.csv)** file containing the journal entry data (Company Code, Posting Date, GL Account columns) into the upload area and click **send**
 
-5. The Journal Entry Agent processes your request and generates a journal entry proposal. You will see the agent's response in the chat window with a summary of the proposed posting.
-<br>![](/exercises/ex1/images/ex1_1_04_agent_response.png)
+<br>![](/exercises/ex1/images/ex1_1_04_agent_response1.png)
 
-6. Review the response. The agent confirms the proposal is ready for review in the Manage Journal Entry Proposals app.
+<br>![](/exercises/ex1/images/ex1_1_04_agent_response3.png)
+
+7. Once you upload the file, the agent begins processing it — you will see the status for example "Resuming workflow with your additional input..." i the screenshot indicating the agent is reading your file and preparing the journal entry proposal.
+
+<br>![](/exercises/ex1/images/ex1_1_04_agent_response4.png)
+
+8. The agent has parsed your Excel file and intelligently mapped all 14 columns to the corresponding SAP fields — grouping them into Header, Item, Debit, and Credit mappings. Each mapping shows a Confidence score, indicating how certain the agent is about each column match (most are 90–100%). You have three options at this point:
+
+    - Approve Mapping — confirms the mapping is correct and the agent proceeds to generate the journal entry proposal
+    - Adjust Mapping — lets you correct or override any column mapping before proceeding
+    - Reject Mapping — cancels the mapping entirely if something is fundamentally wrong
+
+   For this exercise, click **Approve Mapping** to proceed.
+  
+<br>![](/exercises/ex1/images/ex1_1_04_agent_response5.png)
+  
+9. The Journal Entry Agent processes your request and generates a journal entry proposal. You will see the agent's response in the chat window with a summary of the proposed posting.
+
+<br>![](/exercises/ex1/images/ex1_1_04_agent_response6.png)
+
+8. Review the response. The agent confirms the proposal is ready for review in the Manage Journal Entry Proposals app.
 
    > **What to observe:** The agent processes the request and returns a proposal — no additional checks fire, no flags are raised, and no report is generated. This is the standard out-of-the-box behavior. You will compare this to the extended agent in Exercise 2.
 
