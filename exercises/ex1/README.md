@@ -121,15 +121,20 @@ After completing these steps you will have submitted a journal entry request to 
   
 <br>![](/exercises/ex1/images/ex1_1_04_agent_response5.png)
   
-9. The Journal Entry Agent processes your request and generates a journal entry proposal. You will see the agent's response in the chat window with a summary of the proposed posting.
+9. After approving the column mapping, the agent processes your request and generates journal entry proposals — returning a structured summary directly in the
+  chat window.
+
+  - All 14 line items passed validation and produced two balanced proposals
+  - JE_PROP_0001 — TM266 XXX 01, 30 EUR
+  - JE_PROP_0002 — TM266 XXX 02, 50 EUR
+  - Both typed as SA (G/L Account Document), Company Code 1010, posting date 2026-06-14
+  - Status: Proposed — ready for review or direct posting in the SAP Fiori Journal Entry Proposal app
 
 <br>![](/exercises/ex1/images/ex1_1_04_agent_response6.png)
 
-8. Review the response. The agent confirms the proposal is ready for review in the Manage Journal Entry Proposals app.
-
    > **What to observe:** The agent processes the request and returns a proposal — no additional checks fire, no flags are raised, and no report is generated. This is the standard out-of-the-box behavior. You will compare this to the extended agent in Exercise 2.
 
-## Exercise 1.2 - Verify the Proposal and Post the Document in SAP S/4HANA Cloud, Public Edition
+## Exercise 1.2 - Verify the Proposal in SAP S/4HANA Cloud, Public Edition
 
 After completing these steps you will have reviewed the journal entry proposal in the Manage Journal Entry Proposals app and posted the document in SAP S/4HANA Cloud, Public Edition.
 
