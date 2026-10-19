@@ -25,7 +25,7 @@ SAP Joule Works allows you to extend a pre-delivered agent by layering your own 
 
 In this exercise, you will configure four extension layers for the Journal Entry Agent:
 
-- **Pre-hook**: Runs *before* the posting is executed. Checks whether the GL amount exceeds €15,000 and flags it so the agent can warn the user before the document is created.
+- **Pre-hook**: Runs *before* the posting is executed. Checks whether the GL amount exceeds €45 and flags it so the agent can warn the user before the document is created.
 - **Tool Extension**: Connects the agent to the **Journal Entry Line Items API** via MCP Hub. Retrieves existing posting data for the same cost center and GL account — giving the agent more context when processing the request.
 - **Instruction Extension**: A plain language business rule the agent follows at runtime. Validates that the combination of Cost Center, GL Account, Profit Center, and Segment is valid before accepting the posting.
 - **Post-hook**: Runs *after* a successful posting. Generates an HTML summary report of the completed transaction for review or audit.
@@ -50,7 +50,7 @@ Joule Studio is the development environment within SAP Joule Works where you cre
 
 <br>![](/exercises/ex2/images/ex2_1_02_new_extension1.png)
 
-4.In the Create an Agent Extension dialog that appears:
+4. In the Create an Agent Extension dialog that appears:
 
   1. Solution — keep it set to New Solution
   2. Name — replace **TM266-XXX** with your participant ID, for example TM266-001
@@ -65,7 +65,7 @@ Joule Studio is the development environment within SAP Joule Works where you cre
    
  <br>![](/exercises/ex2/images/ex2_1_03_new_solution_dialog1.png)
 
-6.Review the available Extension Points on the agent detail page — you will see Instruction as this is currently GA. Pre-hooks, Post-hooks, and MCP Servers are planned for release after GA post-TechEd, but we will create the extension using all these extension points to showcase the full process. Next click **Select Agent**.
+6. Review the available Extension Points on the agent detail page — you will see Instruction as this is currently GA. Pre-hooks, Post-hooks, and MCP Servers are planned for release after GA post-TechEd, but we will create the extension using all these extension points to showcase the full process. Next click **Select Agent**.
 
 <br>![](/exercises/ex2/images/ex2_1_05_extension_points.png)
 
@@ -80,7 +80,7 @@ The Intent Statement is the starting point for everything Joule Studio builds. I
 Note- Make sure Quick Create is **NOT** selected. Quick Create generates an extension immediately with minimal guidance. Leaving it off activates Intent-Based Development (IBD), which walks you through a structured design flow and produces a richer, more accurate specification based on your input.
 
  
-   > Before processing any journal entry, check if any line item amount exceeds €75,000. If it does, pause and ask the user for explicit approval before continuing.
+   > Before processing any journal entry, check if any line item amount exceeds €45. If it does, pause and ask the user for explicit approval before continuing.
    > 
    > Once approved, validate the uploaded journal entry proposal against historical journal entry posting patterns in SAP S/4HANA Cloud Public Edition.To do this, query the Universal Journal — the single source of truth    for all financial postings in S/4HANA Cloud — through the MCP tool to retrieve historical posting data. For each line item, compare the combination of Company Code, G/L Account, Cost Center, Profit Center, and Segment with previously posted journal entries.
    > 
@@ -96,77 +96,65 @@ Note- Make sure Quick Create is **NOT** selected. Quick Create generates an exte
 <br>![](/exercises/ex2/images/ex2_2_01_intent_statement.png)
 
 
-## Exercise 2.3 - Review and Accept the Generated Specification
+## Exercise 2.3 - Answer Intent Clarification Questions and Review the Generated Specification
 
-After completing these steps you will have reviewed the Joule Studio-generated specification and confirmed the extension design covering all four extension layers.
+Once you click Create, Joule Studio takes over — it analyzes your landscape, inspects the existing Journal Entry Agent, and kicks off the Intent-Based Development (IBD) flow. Rather than generating a specification immediately, Joule first asks you a series of focused, value-driven questions to ensure the output is grounded in your specific business context. Work through each question, select the options that best match your use case, and click **Submit Answer** to progress through the flow — Joule will then synthesize your answers into a structured business goals table and a complete Intent Analysis Summary for your final confirmation before writing the specification.
 
-The Specification screen is where Joule Studio presents its interpretation of your intent — a structured design document generated automatically from your natural language input. It describes exactly what the extension will do and which extension points it will use. You can review and edit this before anything is generated.
+1. Joule Studio begins executing the Intent-Based Development flow — it calls internal tools to analyze your landscape, reads the existing Journal Entry Agent capabilities, and then asks you a series of focused, value-driven questions to sharpen the extension specification. The questions may vary, but below are some examples — read each question carefully and select the options that best fit your use case, then click Submit Answer to proceed.
+<br>![](/exercises/ex2/images/ex2_3_01.png)
+   
+<br>![](/exercises/ex2/images/ex2_3_02.png)
 
-1. Joule Studio presents a **Specification** summarizing the proposed extension design. Review each section:
-   - **Pre-hook**: GL amount threshold check — flags amounts above €15,000 before the posting is executed
-   - **Tool Extension**: Journal Entry Line Items lookup via MCP Hub for the relevant cost center and GL account
-   - **Instruction Extension**: Validation rule for the combination of Cost Center, GL Account, Profit Center, and Segment
-   - **Post-hook**: HTML summary report generated after each successful posting
-<br>![](/exercises/ex2/images/ex2_3_01_specification_overview.png)
+2. Once you have answered all the clarification questions, Joule Studio summarizes the business goals it derived from your responses into a structured table for your confirmation before generating the specification. Review the table to ensure the goals accurately reflect your intent — you can Confirm it as-is, or go back and Edit an entry, Add entry, or Remove entry to adjust before proceeding
 
-2. Review the **Instruction Extension** text in the editable field. This is the plain language business rule the agent will follow at runtime. You can edit it directly to refine the wording if needed.
-<br>![](/exercises/ex2/images/ex2_3_02_instruction_edit.png)
+<br>![](/exercises/ex2/images/ex2_3_03.png)
 
-3. When satisfied with the specification, select **Build** to proceed to project generation.
-<br>![](/exercises/ex2/images/ex2_3_03_build_button.png)
+3. Joule then presents a complete Intent Analysis Summary — a structured breakdown of everything it has inferred from your intent statement and answers, before writing the final specification file. Next **confirm** and click **Submit Answer**.
+<br>![](/exercises/ex2/images/ex2_3_04.png)
 
-## Exercise 2.4 - Review the Generated Extension Artifacts
+## Exercise 2.4 - Navigate the Solution Progress Flow and Review Generated Artifacts
 
-After completing these steps you will have inspected the extension artifacts generated by Joule Studio and understood what each one does.
+Once the Intent Analysis Summary is confirmed, Joule Studio shifts into a fully guided delivery flow — systematically building out every layer of your extension from business intent to deployable code, with structured checkpoints at each stage for your review and confirmation
 
-When you select Build, Joule Studio automatically generates a set of artifacts that define your extension — the technical representation of the specification you approved. You do not need to write or edit these manually.
+1. Once you confirm the Intent Analysis Summary, Joule Studio saves the intent.md file and transitions into a structured Solution Progress flow — guiding you through all four phases visible in the left panel: Intent Summary, Requirements, Specifications, and Solution Artifacts — taking you step by step from business intent all the way through to deployable extension artifacts.
 
-1. Once the project is generated, open the artifacts overview to see everything that was created.
-<br>![](/exercises/ex2/images/ex2_4_01_artifacts_overview.png)
+  - The Intent Summary phase is now complete (green checkmark)
+  - The flow moves automatically to the Requirements phase
+  - On the right, Joule presents a summary of the confirmed solution approach — the €45 approval gate via Before Hook, historical pattern matching via Universal Journal API, and the color-coded HTML report
+  - Joule then asks: "Would you like to proceed to creating the Product Requirements Document (PRD), which will detail all the functional requirements for this extension?"
+  - Type Yes in the message box and hit send — this triggers Joule to generate the full PRD and populate the Requirements phase with all functional requirements for your extension
 
-2. Open the **Instruction definition**. This contains the natural language business rule that will be injected into the agent's context at runtime — telling it how to validate the account combination before accepting a posting.
-<br>![](/exercises/ex2/images/ex2_4_02_instruction_artifact.png)
+<br>![](/exercises/ex2/images/ex2_3_05.png)
 
-3. Open the **Tool configuration**. This defines the connection to the Journal Entry Line Items API via MCP Hub, including any credential assignments that were automatically applied.
-<br>![](/exercises/ex2/images/ex2_4_03_tool_artifact.png)
+2. From here, Joule will automatically walk you through the remaining phases — generating the PRD, then the technical Specifications — pausing at each stage to present a structured summary and ask for your confirmation before writing the next document and advancing to the next phase. Once each phase is completed, the full generated document appears in the center panel — feel free to scroll through and explore the content to understand what Joule has produced before moving on.
 
-4. Open the **Pre-hook definition**. This is the workflow that executes before each posting attempt — checking the GL amount and returning a flag to the agent if the €15,000 threshold is exceeded.
-<br>![](/exercises/ex2/images/ex2_4_04_prehook_artifact.png)
+  > Note: After reviewing, always respond to Joule in the chat to confirm and instruct it to proceed to the next step — Joule will not advance automatically until you explicitly tell it to continue. If you prefer to skip the guided flow and generate the extension immediately, you can enable Quick Create — however this produces a less detailed specification with no structured review steps.
 
-5. Open the **Post-hook definition**. This is the workflow that fires after a successful posting and produces the HTML summary report.
-<br>![](/exercises/ex2/images/ex2_4_05_posthook_artifact.png)
+<br>![](/exercises/ex2/images/ex2_3_07.png)
 
-> **Note:** Instruction extensions are fully supported at GA. Tool and hook artifacts may be subject to feature availability in your landscape — verify with your administrator if any artifacts are not visible.
+3. Review the Generated Solution Artifacts
 
-## Exercise 2.5 - Test the Extended Agent in Preview
+  - The Solution Artifacts phase generates the complete extension package, including the journal-entry-validation-agent-extension with wired Instructions and  Context, validation rules, and Before Hook logic
+  - Explore the File tree on the left to browse all generated files and click through the artifacts to understand what Joule has produced
+   
+<br>![](/exercises/ex2/images/ex2_3_08.png)
 
-After completing these steps you will have run the extended Journal Entry Agent and observed all four extension layers firing in sequence using the same prompt from Exercise 1.
+4. Click on extension.yaml in the File tree to inspect the full agent extension definition
+   
+   - including the capability instructions, approval gate logic, and  the step-by-step validation rules Joule has generated directly from your intent
+   - Take a moment to read through the file and appreciate how your plain-language intent statement has been translated into a structured, deployable extension
+  specification
+   
+<br>![](/exercises/ex2/images/ex2_3_09.png)
 
-Before deploying to production, Joule Studio allows you to test your extension in a preview chat experience connected to your development environment. This lets you validate the agent's behavior end-to-end and confirm that each extension layer fires correctly before any changes reach the live system.
+ >  Please stop at this point and do not proceed with deployment.Deploying the extension to production requires the **Joule Studio Administrator** role. Your facilitator will walk through the full deployment and demonstrate the final running extension — as deployment can take several minutes, this will be demonstrated rather than completed individually.
 
-1. Open the **chat experience** in Joule Works.
-<br>![](/exercises/ex2/images/ex2_5_01_chat_open.png)
-
-2. Enter the same prompt you used in Exercise 1:
-
-```
-Post JE – CC 4400 – GL 618000 – €75,000 intercompany
-```
-
-3. The **pre-hook** fires first and flags the €75,000 amount — because it exceeds the €15,000 threshold configured in your extension.
-<br>![](/exercises/ex2/images/ex2_5_02_prehook_flag.png)
-
-4. The agent then uses the **Journal Entry Line Items tool** to look up existing postings for CC 4400 and GL 618000, applies the **instruction rule** to validate the account combination, and once the posting is confirmed, the **post-hook** fires and generates the HTML summary report.
-<br>![](/exercises/ex2/images/ex2_5_03_posthook_report.png)
-
-5. Compare this result to what you saw in Exercise 1. The prompt is identical — but the agent's behavior is now shaped entirely by the business logic you defined through intent.
 
 ## Summary
 
-You've now successfully extended the pre-delivered Journal Entry Agent using intent-based development in Joule Studio. Starting from a plain language description of your business requirements, Joule Works guided you through agent selection, specification review, artifact generation, and end-to-end preview testing — all without writing a single line of code.
+You've now successfully extended the pre-delivered Journal Entry Agent using intent-based development in Joule Studio. Starting from a plain language description of your business requirements, Joule Studio guided you through agent selection, specification review, artifact generation, and end-to-end preview testing — all without writing a single line of code. This is the core value of agent extensibility on SAP Autonomous Suite: you bring the business knowledge, Joule Studio handles the translation into a working extension. 
 
-This is the core value of agent extensibility on SAP Autonomous Suite: you bring the business knowledge, Joule Works handles the translation into a working extension. The same pattern applies to any pre-delivered SAP agent — giving you a repeatable, low-effort path to tailoring agent behavior for your organization's specific needs.
+The same pattern applies to any pre-delivered SAP agent — giving you a repeatable, low-effort path to tailoring agent behavior for your organization's specific needs — no specialist development skills required.
 
-> **Deployment Note:** Deploying the extension to production requires the **Joule Studio Administrator** role. The speaker will now demonstrate the full deployment flow and run the extended agent live in the production environment.
+Happy TechEd:)
 
-Continue to - [Summary](../../README.md)
