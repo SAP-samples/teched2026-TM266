@@ -106,6 +106,7 @@ Once you click Create, Joule Studio takes over — it analyzes your landscape, i
 
 1. Joule Studio begins executing the Intent-Based Development flow — it calls internal tools to analyze your landscape, reads the existing Journal Entry Agent capabilities, and then asks you a series of focused, value-driven questions to sharpen the extension specification. The questions may vary, but below are some examples — read each question carefully and select the options that best fit your use case, then click Submit Answer to proceed.
 
+
 <br>![](/exercises/ex3/images/ex2_3_01.png)
    
 <br>![](/exercises/ex3/images/ex2_3_02.png)
