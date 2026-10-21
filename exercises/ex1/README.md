@@ -195,4 +195,4 @@ You've now run the standard pre-delivered Journal Entry Agent end-to-end. You su
 
 This is the baseline — the agent working exactly as delivered, with no custom extensions. In the next exercise, you will extend this same agent with four layers of business-specific behavior using intent-based development in Joule Studio.
 
-Continue to - [Exercise 2 - Extend the Journal Entry Agent with Intent](../ex2/README.md)
+Continue to - [Exercise 2 - Extend the Journal Entry Agent: Instruction Extension - Disclaimer](../ex2/README.md)

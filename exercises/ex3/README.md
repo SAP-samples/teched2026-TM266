@@ -1,4 +1,4 @@
-# Exercise 3 - Extend the Journal Entry Agent with Intent
+# Exercise 3 - Extend the Journal Entry Agent: Instructions, Tools & Hooks - Historic Validation Check
 
 In this exercise, we will extend the pre-delivered Journal Entry Agent using intent-based development in Joule Studio.
 
