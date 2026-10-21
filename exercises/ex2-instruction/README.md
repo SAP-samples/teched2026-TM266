@@ -85,23 +85,17 @@ After completing these steps you will have submitted your intent statement and t
 
 After completing these steps you will have provided the business context that Joule Studio uses to shape the extension specification.
 
-1. Joule Studio creates the solution and begins the IBD flow. You will see it execute a series of steps — Thought, Activate Skill, List Files, Read File — before surfacing the first clarifying question.
+1. Joule Studio creates the solution and begins the IBD (Intent Based Development) flow. You will see it execute a series of steps — Thought, Activate Skill, List Files, Read File — before surfacing the first clarifying question.
 
 <br>![](/exercises/ex2-instruction/images/08_joule_processing.png)
 
-2. Joule asks: **"To complete the intent analysis, I need to understand the business goal behind adding this AI disclaimer. What outcome are you looking to achieve?"**
+2. Joule will ask you one or more clarifying questions to better understand your intent.
 
-   Select **Ensure users are aware responses are AI-generated (regulatory/compliance requirement)** and click **Submit Answer**.
+   > **Note:** These questions are generated dynamically by the LLM based on your intent statement. The exact wording and number of questions may differ each time. There are no fixed right or wrong answers — read each question and select or type the response that best reflects the goal of adding a mandatory AI disclaimer for regulatory or compliance reasons.
+
+   The screenshots below show example questions you may encounter. Use them as a guide, not a script.
 
 <br>![](/exercises/ex2-instruction/images/09_clarify_business_goal.png)
-
-3. Joule asks a second question: **"What would a successful outcome look like for this requirement?"**
-
-   Type the following in the text field and click **Submit Answer**:
-
-   ```
-   100% of responses include the disclaimer
-   ```
 
 <br>![](/exercises/ex2-instruction/images/10_clarify_success_criteria.png)
 
