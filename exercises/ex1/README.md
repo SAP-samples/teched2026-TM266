@@ -132,7 +132,7 @@ After completing these steps you will have submitted a journal entry request to 
 
 <br>![](/exercises/ex1/images/ex1_1_04_agent_response6.png)
 
-   > **What to observe:** The agent processes the request and returns a proposal — no additional checks fire, no flags are raised, and no report is generated. This is the standard out-of-the-box behavior. You will compare this to the extended agent in Exercise 2.
+   > **What to observe:** The agent processes the request and returns a proposal — no additional checks fire, no flags are raised, and no report is generated. This is the standard out-of-the-box behavior. You will compare this to the extended agent in Exercise 3.
 
 ## Exercise 1.2 - Verify the Proposal in SAP S/4HANA Cloud, Public Edition
 
@@ -187,7 +187,7 @@ After completing these steps you will have reviewed the journal entry proposal i
 
 <br>![](/exercises/ex1/images/ex1_2_08_gl_document.png)
 
-   > **What to observe:** The document was posted cleanly with no additional processing. This is the baseline. In Exercise 2, you will run the exact same prompt against the extended agent and see how the behavior changes.
+   > **What to observe:** The document was posted cleanly with no additional processing. This is the baseline. In Exercise 3, you will run the exact same prompt against the extended agent and see how the behavior changes.
 
 ## Summary
 

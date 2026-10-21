@@ -19,11 +19,20 @@ All system access required for this session will be provided to you. During the 
 Provide the exercise content here directly in README.md using [markdown](https://guides.github.com/features/mastering-markdown/) and linking to the specific exercise pages, below is an example.
 
 - [Exercise 1 - Run the Standard Out-of-the-Box Journal Entry Agent](exercises/ex1/)
-    - [Exercise 1.1 - Trigger the Journal Entry Agent in Joule with a natural language prompt](exercises/ex1#exercise-11-sub-exercise-1-description)
-    - [Exercise 1.2 - Verify the proposal and post the document in SAP S/4HANA Cloud, Public Edition](exercises/ex1#exercise-12-sub-exercise-2-description)
-- [Exercise 2 - Extend the Agent with Intent using SAP Joule Studio](exercises/ex2/)
-    - [Exercise 2.1 - Exercise 2 Sub Exercise 1 Description](exercises/ex2#exercise-21-sub-exercise-1-description)
-    - [Exercise 2.2 - Exercise 2 Sub Exercise 2 Description](exercises/ex2#exercise-22-sub-exercise-2-description)
+    - [Exercise 1.1 - Trigger the Journal Entry Agent in Joule with a natural language prompt](exercises/ex1#exercise-11-trigger-the-journal-entry-agent-in-joule-works)
+    - [Exercise 1.2 - Verify the proposal and post the document in SAP S/4HANA Cloud, Public Edition](exercises/ex1#exercise-12-verify-the-proposal-and-post-the-document-in-sap-s4hana-cloud-public-edition)
+- [Exercise 2 - Create an AI Disclaimer Instruction Extension](exercises/ex2/)
+    - [Exercise 2.1 - Access Joule Studio and Initiate a New Extension](exercises/ex2#exercise-21---access-joule-studio-and-initiate-a-new-extension)
+    - [Exercise 2.2 - Configure the Extension and Select the Target Agent](exercises/ex2#exercise-22---configure-the-extension-and-select-the-target-agent)
+    - [Exercise 2.3 - Enter the Intent Statement and Create the Extension](exercises/ex2#exercise-23---enter-the-intent-statement-and-create-the-extension)
+    - [Exercise 2.4 - Answer the Clarifying Questions](exercises/ex2#exercise-24---answer-the-clarifying-questions)
+    - [Exercise 2.5 - Review the Intent Analysis and Confirm](exercises/ex2#exercise-25---review-the-intent-analysis-and-confirm)
+    - [Exercise 2.6 - Review the Product Requirements Document](exercises/ex2#exercise-26---review-the-product-requirements-document)
+    - [Exercise 2.7 - Review the Generated Artifact and Deploy](exercises/ex2#exercise-27---review-the-generated-artifact-and-deploy)
+- [Exercise 3 - Extend the Journal Entry Agent with Intent](exercises/ex3/)
+    - [Exercise 3.1 - Access Joule Studio and Create a New Extension](exercises/ex3#exercise-31---access-joule-studio-and-create-a-new-extension)
+    - [Exercise 3.2 - Enter Your Intent Statement](exercises/ex3#exercise-32---enter-your-intent-statement)
+    - [Exercise 3.3 - Answer Intent Clarification Questions and Review the Generated Specification](exercises/ex3#exercise-33---answer-intent-clarification-questions-and-review-the-generated-specification)
 
 ## Contributing
 Please read the [CONTRIBUTING.md](./CONTRIBUTING.md) to understand the contribution guidelines.
