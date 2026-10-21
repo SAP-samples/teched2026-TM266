@@ -166,23 +166,10 @@ After completing these steps you will have inspected the generated `extension.ya
 
    > Joule Studio generates this artifact automatically from your intent statement. The `instructionSupported: true` flag on the agent means the disclaimer is enforced directly as an extension instruction — no tools or hooks are needed.
 
-2. On the right panel, click **Deploy** to deploy the extension to your landscape.
 
 <br>![](/exercises/ex2-instruction/images/13_extension_yaml_deploy.png)
 
----
-
-## Exercise 2.8 - Confirm the Deployment
-
-After completing these steps the extension will be live and the Journal Entry Agent will begin appending the disclaimer to every response.
-
-1. Joule Studio runs the deployment steps — Get Solution ID, Update File, Execute Contract, Deploy Solution. Watch the right panel for progress messages.
-
-2. Once complete, the right panel displays:
-
-   > **Deployment has been completed successfully. The expected behavior can now be tested in the agent.**
-
-3. Select **Add to Joule** to make the extension available in the live Joule chat experience.
+> **Please stop at this point and do not proceed with deployment.** Deploying the extension to production requires the Joule Studio Administrator role. Your facilitator will walk through the full deployment and demonstrate the final running extension — as deployment can take several minutes, this will be demonstrated rather than completed individually.
 
 <br>![](/exercises/ex2-instruction/images/14_deployment_success.png)
 
@@ -190,14 +177,13 @@ After completing these steps the extension will be live and the Journal Entry Ag
 
 ## Summary
 
-You have created and deployed an Instruction Extension for the pre-delivered Journal Entry Agent using Joule Studio's Intent-Based Development flow. Starting from a plain language intent statement, Joule Studio:
+You have created an Instruction Extension for the pre-delivered Journal Entry Agent using Joule Studio's Intent-Based Development flow. Starting from a plain language intent statement, Joule Studio:
 
 1. Asked targeted clarifying questions to understand your business goal
 2. Produced a structured Intent Analysis Summary and PRD
-3. Generated a deployable `extension.yaml` artifact
-4. Deployed the extension to your landscape — with no manual YAML editing required
+3. Generated a deployable `extension.yaml` artifact — with no manual YAML editing required
 
-The Journal Entry Agent will now append a mandatory disclaimer to every response, satisfying your regulatory/compliance requirement.
+Your facilitator will now deploy the extension and demonstrate the Journal Entry Agent appending the mandatory disclaimer to every response.
 
 This is the simplest form of an agent extension — a single instruction with no tools or hooks. In Exercise 2, you will see how the same IBD flow handles a much more complex scenario with four extension layers: a pre-hook, a tool integration, an instruction, and a post-hook.
 
