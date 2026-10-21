@@ -98,6 +98,8 @@ Note- Make sure Quick Create is **NOT** selected. Quick Create generates an exte
 
 ## Exercise 2.3 - Answer Intent Clarification Questions and Review the Generated Specification
 
+> **Note:** The clarifying questions in this section are generated dynamically by the LLM based on your intent statement. The exact wording and number of questions may differ each time. There are no fixed right or wrong answers — read each question and select the response that best reflects your business goal. The screenshots below are examples to guide you, not a script to follow exactly.
+
 Once you click Create, Joule Studio takes over — it analyzes your landscape, inspects the existing Journal Entry Agent, and kicks off the Intent-Based Development (IBD) flow. Rather than generating a specification immediately, Joule first asks you a series of focused, value-driven questions to ensure the output is grounded in your specific business context. Work through each question, select the options that best match your use case, and click **Submit Answer** to progress through the flow — Joule will then synthesize your answers into a structured business goals table and a complete Intent Analysis Summary for your final confirmation before writing the specification.
 
 1. Joule Studio begins executing the Intent-Based Development flow — it calls internal tools to analyze your landscape, reads the existing Journal Entry Agent capabilities, and then asks you a series of focused, value-driven questions to sharpen the extension specification. The questions may vary, but below are some examples — read each question carefully and select the options that best fit your use case, then click Submit Answer to proceed.
