@@ -151,11 +151,11 @@ After completing these steps you will have reviewed the journal entry proposal i
    
 <br>![](/exercises/ex1/images/ex1_2_01_s4_login.png)
 
-4. On the Fiori launchpad, search for and open the **Manage Journal Entry Proposals** app (F9263).
+3. On the Fiori launchpad, search for and open the **Manage Journal Entry Proposals** app (F9263).
    
 <br>![](/exercises/ex1/images/ex1_2_02_app_search.png)
 
-6. Open the **Manage Journal Entry Proposals Fiori** app and search for your proposals by entering **TM266 XXX **(replace XXX with your participant ID, e.g. TM266 001)
+4. Open the **Manage Journal Entry Proposals Fiori** app and search for your proposals by entering **TM266 XXX **(replace XXX with your participant ID, e.g. TM266 001)
   in the search field, then click **Go**.
 
   - Both proposals appear in the list with status **Open**
@@ -169,15 +169,15 @@ After completing these steps you will have reviewed the journal entry proposal i
    
 <br>![](/exercises/ex1/images/ex1_2_04_proposal_detail.png)
 
-7.  Select the proposal you want to post by checking the checkbox next to it, then click the **Post** button in the toolbar.
+6.  Select the proposal you want to post by checking the checkbox next to it, then click the **Post** button in the toolbar.
    
 <br>![](/exercises/ex1/images/ex1_2_05_post_button.png)
 
-8. Confirm the posting in the dialog that appears.
+7. Confirm the posting in the dialog that appears.
    
 <br>![](/exercises/ex1/images/ex1_2_06_post_confirm.png)
 
-9. After posting, the proposal status updates to **Processed ** and a **G/L Journal Entry number** is assigned.
+8. After posting, the proposal status updates to **Processed ** and a **G/L Journal Entry number** is assigned.
 
   - Filter by Status Processed and click Go to confirm the posted proposal
   - JE_PROP_20261019-16:43:17-5265120_0001 (TM266 XXX 01, 30.00 EUR) now shows status Processed
