@@ -20,7 +20,9 @@ The Journal Entry Agent processes financial data and surfaces results directly t
 
 After completing these steps you will have opened Joule Studio and started creating a new Agent Extension targeting the Journal Entry Agent.
 
-1. Log in to SAP Joule Works using the credentials provided at your desk.
+1. Log in to SAP Joule Works using the below URL (Note: You have already logged in during the previous exercise)
+
+   https://747238487.eu10.sapdas.cloud.sap/new/conversations
 
 2. In the left navigation panel, select **Joule Studio**.
 
