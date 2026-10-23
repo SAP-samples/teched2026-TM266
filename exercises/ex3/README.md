@@ -54,10 +54,10 @@ Joule Studio is the development environment within SAP Joule Works where you cre
 
 4. In the Create an Agent Extension dialog that appears:
 
-  1. Solution — keep it set to New Solution
-  2. Name — replace **TM266-XXX** with your participant ID, for example TM266-001
-  3. Agent — click the icon next to the **Select Agent** field to open the **Agent Catalog**
-  4. Intent Statement — leave this for the next step
+   - Solution — keep it set to New Solution
+   - Name — replace **TM266-XXX** with your participant ID, for example TM266-001
+   - Agent — click the icon next to the **Select Agent** field to open the **Agent Catalog**
+   - Intent Statement — leave this for the next step
 
  <br>![](/exercises/ex3/images/ex2_1_03_new_solution_dialog.png)
 
@@ -105,6 +105,7 @@ Note- Make sure Quick Create is **NOT** selected. Quick Create generates an exte
 Once you click Create, Joule Studio takes over — it analyzes your landscape, inspects the existing Journal Entry Agent, and kicks off the Intent-Based Development (IBD) flow. Rather than generating a specification immediately, Joule first asks you a series of focused, value-driven questions to ensure the output is grounded in your specific business context. Work through each question, select the options that best match your use case, and click **Submit Answer** to progress through the flow — Joule will then synthesize your answers into a structured business goals table and a complete Intent Analysis Summary for your final confirmation before writing the specification.
 
 1. Joule Studio begins executing the Intent-Based Development flow — it calls internal tools to analyze your landscape, reads the existing Journal Entry Agent capabilities, and then asks you a series of focused, value-driven questions to sharpen the extension specification. The questions may vary, but below are some examples — read each question carefully and select the options that best fit your use case, then click Submit Answer to proceed.
+
 <br>![](/exercises/ex3/images/ex2_3_01.png)
    
 <br>![](/exercises/ex3/images/ex2_3_02.png)
@@ -114,6 +115,7 @@ Once you click Create, Joule Studio takes over — it analyzes your landscape, i
 <br>![](/exercises/ex3/images/ex2_3_03.png)
 
 3. Joule then presents a complete Intent Analysis Summary — a structured breakdown of everything it has inferred from your intent statement and answers, before writing the final specification file. Next **confirm** and click **Submit Answer**.
+   
 <br>![](/exercises/ex3/images/ex2_3_04.png)
 
 ## Exercise 3.4 - Navigate the Solution Progress Flow and Review Generated Artifacts
