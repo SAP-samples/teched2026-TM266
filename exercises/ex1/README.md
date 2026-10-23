@@ -75,16 +75,14 @@ After completing these steps you will have submitted a journal entry request to 
 1. Open your browser and navigate to the Joule Works URL provided at your desk:
 
    ```
-   https://<your-system-url>.joule.cloud.sap
+   https://747238487.eu10.sapdas.cloud.sap/new/conversations
    ```
-
-   > **Note:** The exact URL will be provided by the instructor and is printed on the card at your desk.
 
 2. Log in using the credentials provided by the instructor:
 
    | Field | Value |
    |-------|-------|
-   | User  | `TM266-XXX` *(where XXX is your participant number)* |
+   | User  | `TM266-XXX` *(where XXX is your participant number, Example 001 , use TM266-001)* |
    | Password | *(as provided by the instructor)* |
 
 <br>![](/exercises/ex1/images/ex1_1_01_login.png)
@@ -141,12 +139,16 @@ After completing these steps you will have reviewed the journal entry proposal i
 1. Open a new browser tab and navigate to the SAP S/4HANA Cloud, Public Edition Fiori launchpad using the URL provided at your desk:
 
    ```
-   https://<your-s4-system>.s4hana.cloud.sap/ui
+   https://my441372.s4hana.cloud.sap/ui
    ```
 
-   > **Note:** The exact URL will be provided by the instructor.
 
-2. Log in using the same credentials from your desk card.
+2. Log in using the below credentials.
+
+   | Field | Value |
+   |-------|-------|
+   | User  | `TM266-XXX` *(where XXX is your participant number, Example 001 , use TM266-001)* |
+   | Password | *(as provided by the instructor)* |
    
 <br>![](/exercises/ex1/images/ex1_2_01_s4_login.png)
 
