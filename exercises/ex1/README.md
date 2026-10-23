@@ -74,9 +74,8 @@ After completing these steps you will have submitted a journal entry request to 
 
 1. Open your browser and navigate to the Joule Works URL provided at your desk:
 
-   ```
    https://747238487.eu10.sapdas.cloud.sap/new/conversations
-   ```
+   
 
 2. Log in using the credentials provided by the instructor:
 
