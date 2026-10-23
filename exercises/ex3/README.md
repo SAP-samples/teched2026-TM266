@@ -38,9 +38,11 @@ After completing these steps you will have opened Joule Studio and initiated a n
 
 Joule Studio is the development environment within SAP Joule Works where you create, configure, and manage agent extensions. It provides a guided flow that takes you from a business problem statement all the way through to a generated, deployable extension.
 
-1. Log in to SAP Joule Works using the credentials provided at your desk.
+1. Log in to SAP Joule Works using the URL below: (Note: You have already logged in during the previous exercise)
+   
+   https://747238487.eu10.sapdas.cloud.sap/new/conversations
 
-2. In the left navigation panel, select **Joule Studio**.
+3. In the left navigation panel, select **Joule Studio**.
    
 <br>![](/exercises/ex3/images/ex2_1_01_joule_studio_nav.png)
 
