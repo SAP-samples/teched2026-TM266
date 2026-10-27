@@ -29,7 +29,7 @@ Provide the exercise content here directly in README.md using [markdown](https:/
     - [Exercise 2.5 - Review the Intent Analysis and Confirm](exercises/ex2#exercise-25---review-the-intent-analysis-and-confirm)
     - [Exercise 2.6 - Review the Product Requirements Document](exercises/ex2#exercise-26---review-the-product-requirements-document)
     - [Exercise 2.7 - Review the Generated Artifact and Deploy](exercises/ex2#exercise-27---review-the-generated-artifact-and-deploy)
-- [Exercise 3 - Extend the Journal Entry Agent: Instructions, Tools & Hooks - Historic Validation Check](exercises/ex3/)
+- [Exercise 3 - Extend the Journal Entry Agent: Instructions & Tools - Historic Validation Check](exercises/ex3/)
     - [Exercise 3.1 - Access Joule Studio and Create a New Extension](exercises/ex3#exercise-31---access-joule-studio-and-create-a-new-extension)
     - [Exercise 3.2 - Enter Your Intent Statement](exercises/ex3#exercise-32---enter-your-intent-statement)
     - [Exercise 3.3 - Answer Intent Clarification Questions and Review the Generated Specification](exercises/ex3#exercise-33---answer-intent-clarification-questions-and-review-the-generated-specification)

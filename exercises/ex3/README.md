@@ -1,19 +1,17 @@
-# Exercise 3 - Extend the Journal Entry Agent: Instructions, Tools & Hooks - Historic Validation Check
+# Exercise 3 - Extend the Journal Entry Agent: Instructions & Tools - Historic Validation Check
 
 In this exercise, we will extend the pre-delivered Journal Entry Agent using intent-based development in Joule Studio.
 
 ### Where we left off
 
-In Exercise 1, you ran the standard Journal Entry Agent in Joule Works. You entered a natural language prompt, the agent processed it, and the document was posted directly in SAP S/4HANA Cloud, Public Edition — no additional checks, no validations, no enrichment. The agent did exactly what it was built to do out of the box.
+In Exercise 1, you ran the standard Journal Entry Agent — no additional checks, no validations, no enrichment. In Exercise 2, you extended the agent with a mandatory AI disclaimer instruction, ensuring every response clearly identifies itself as AI-generated. Now you will take extensibility further: adding an instruction that validates historical posting patterns and a tool that connects the agent to the Universal Journal for live data retrieval.
 
 ### The business problem
 
 Real-world finance processes are rarely that simple. Consider what a finance team actually needs:
 
-- **Before posting**: Flag unusually high amounts so a controller can review before the document hits the books.
 - **During processing**: Check whether the combination of cost center, GL account, profit center, and segment is valid for your organization — rules that are specific to your chart of accounts and not built into the standard agent.
 - **With more context**: Pull in existing posting data for the same cost center and GL account so the agent can make a more informed decision.
-- **After posting**: Automatically generate a structured summary for audit, reporting, or team notification — without the user having to do anything extra.
 
 None of this is in the standard agent. But all of it can be added — without building a new agent from scratch.
 
@@ -23,12 +21,10 @@ SAP Joule Works allows you to extend a pre-delivered agent by layering your own 
 
 ### What you will build
 
-In this exercise, you will configure four extension layers for the Journal Entry Agent:
+In this exercise, you will configure two extension layers for the Journal Entry Agent:
 
-- **Pre-hook**: Runs *before* the posting is executed. Checks whether the GL amount exceeds €45 and flags it so the agent can warn the user before the document is created.
 - **Tool Extension**: Connects the agent to the **Journal Entry Line Items API** via MCP Hub. Retrieves existing posting data for the same cost center and GL account — giving the agent more context when processing the request.
 - **Instruction Extension**: A plain language business rule the agent follows at runtime. Validates that the combination of Cost Center, GL Account, Profit Center, and Segment is valid before accepting the posting.
-- **Post-hook**: Runs *after* a successful posting. Generates an HTML summary report of the completed transaction for review or audit.
 
 By the end of this exercise, you will run the same prompt from Exercise 1 — and see exactly how each extension layer changes the agent's behavior. The final deployment to production will be demonstrated live by the speaker.
 
