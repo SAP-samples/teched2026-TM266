@@ -2,6 +2,8 @@
 
 ## Description
 
+[![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/teched2026-TM266)](https://api.reuse.software/info/github.com/SAP-samples/teched2026-TM266)
+
 This repository contains the material for the SAP TechEd 2026 session called TM266 - From Intent to Extension: SAP Agents with Joule in Cloud ERP.
 
 ## Overview
@@ -29,10 +31,16 @@ Provide the exercise content here directly in README.md using [markdown](https:/
     - [Exercise 2.5 - Review the Intent Analysis and Confirm](exercises/ex2#exercise-25---review-the-intent-analysis-and-confirm)
     - [Exercise 2.6 - Review the Product Requirements Document](exercises/ex2#exercise-26---review-the-product-requirements-document)
     - [Exercise 2.7 - Review the Generated Artifact and Deploy](exercises/ex2#exercise-27---review-the-generated-artifact-and-deploy)
-- [Exercise 3 - Extend the Journal Entry Agent: Instructions, Tools & Hooks - Historic Validation Check](exercises/ex3/)
+- [Exercise 3 - Extend the Journal Entry Agent: Instructions & Tools - Historic Validation Check](exercises/ex3/)
     - [Exercise 3.1 - Access Joule Studio and Create a New Extension](exercises/ex3#exercise-31---access-joule-studio-and-create-a-new-extension)
     - [Exercise 3.2 - Enter Your Intent Statement](exercises/ex3#exercise-32---enter-your-intent-statement)
     - [Exercise 3.3 - Answer Intent Clarification Questions and Review the Generated Specification](exercises/ex3#exercise-33---answer-intent-clarification-questions-and-review-the-generated-specification)
+    - [Exercise 3.4 - Navigate the Solution Progress Flow and Review Generated Artifacts](exercises/ex3#exercise-34---navigate-the-solution-progress-flow-and-review-generated-artifacts)
+- [Exercise 4 - Extend the Journal Entry Agent: Instructions, Tools & Hooks - Historic Validation Check](exercises/ex4/)
+    - [Exercise 4.1 - Access Joule Studio and Create a New Extension](exercises/ex4#exercise-41---access-joule-studio-and-create-a-new-extension)
+    - [Exercise 4.2 - Enter Your Intent Statement](exercises/ex4#exercise-42---enter-your-intent-statement)
+    - [Exercise 4.3 - Answer Intent Clarification Questions and Review the Generated Specification](exercises/ex4#exercise-43---answer-intent-clarification-questions-and-review-the-generated-specification)
+    - [Exercise 4.4 - Navigate the Solution Progress Flow and Review Generated Artifacts](exercises/ex4#exercise-44---navigate-the-solution-progress-flow-and-review-generated-artifacts)
 
 ## Contributing
 Please read the [CONTRIBUTING.md](./CONTRIBUTING.md) to understand the contribution guidelines.
@@ -45,4 +53,4 @@ Please read the [SAP Open Source Code of Conduct](https://github.com/SAP-samples
 Support for the content in this repository is available during the actual time of the online session for which this content has been designed. Otherwise, you may request support via the [Issues](../../issues) tab.
 
 ## License
-Copyright (20xx-)20xx SAP SE or an SAP affiliate company and <your-project> contributors. Please see our [LICENSE](LICENSE) for copyright and license information. Detailed information including third-party components and their licensing/copyright information is available [via the REUSE tool](https://api.reuse.software/info/github.com/SAP/<your-project>).
+Copyright 2026 SAP SE or an SAP affiliate company and teched2026-TM266 contributors. Please see our [LICENSE](LICENSE) for copyright and license information. Detailed information including third-party components and their licensing/copyright information is available [via the REUSE tool](https://api.reuse.software/info/github.com/SAP-samples/teched2026-TM266).

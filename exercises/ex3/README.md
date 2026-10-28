@@ -1,19 +1,17 @@
-# Exercise 3 - Extend the Journal Entry Agent: Instructions, Tools & Hooks - Historic Validation Check
+# Exercise 3 - Extend the Journal Entry Agent: Instructions & Tools - Historic Validation Check
 
 In this exercise, we will extend the pre-delivered Journal Entry Agent using intent-based development in Joule Studio.
 
 ### Where we left off
 
-In Exercise 1, you ran the standard Journal Entry Agent in Joule Works. You entered a natural language prompt, the agent processed it, and the document was posted directly in SAP S/4HANA Cloud, Public Edition — no additional checks, no validations, no enrichment. The agent did exactly what it was built to do out of the box.
+In Exercise 1, you ran the standard Journal Entry Agent — no additional checks, no validations, no enrichment. In Exercise 2, you extended the agent with a mandatory AI disclaimer instruction, ensuring every response clearly identifies itself as AI-generated. Now you will take extensibility further: adding an instruction that validates historical posting patterns and a tool that connects the agent to the Universal Journal for live data retrieval.
 
 ### The business problem
 
 Real-world finance processes are rarely that simple. Consider what a finance team actually needs:
 
-- **Before posting**: Flag unusually high amounts so a controller can review before the document hits the books.
 - **During processing**: Check whether the combination of cost center, GL account, profit center, and segment is valid for your organization — rules that are specific to your chart of accounts and not built into the standard agent.
 - **With more context**: Pull in existing posting data for the same cost center and GL account so the agent can make a more informed decision.
-- **After posting**: Automatically generate a structured summary for audit, reporting, or team notification — without the user having to do anything extra.
 
 None of this is in the standard agent. But all of it can be added — without building a new agent from scratch.
 
@@ -23,12 +21,10 @@ SAP Joule Works allows you to extend a pre-delivered agent by layering your own 
 
 ### What you will build
 
-In this exercise, you will configure four extension layers for the Journal Entry Agent:
+In this exercise, you will configure two extension layers for the Journal Entry Agent:
 
-- **Pre-hook**: Runs *before* the posting is executed. Checks whether the GL amount exceeds €45 and flags it so the agent can warn the user before the document is created.
-- **Tool Extension**: Connects the agent to the **Journal Entry Line Items API** via MCP Hub. Retrieves existing posting data for the same cost center and GL account — giving the agent more context when processing the request.
+- **Tool Extension**: Connects the agent to the **Journal Entry Line Items API** via MCP Tools. Retrieves existing posting data for the same cost center and GL account — giving the agent more context when processing the request.
 - **Instruction Extension**: A plain language business rule the agent follows at runtime. Validates that the combination of Cost Center, GL Account, Profit Center, and Segment is valid before accepting the posting.
-- **Post-hook**: Runs *after* a successful posting. Generates an HTML summary report of the completed transaction for review or audit.
 
 By the end of this exercise, you will run the same prompt from Exercise 1 — and see exactly how each extension layer changes the agent's behavior. The final deployment to production will be demonstrated live by the speaker.
 
@@ -54,10 +50,10 @@ Joule Studio is the development environment within SAP Joule Works where you cre
 
 4. In the Create an Agent Extension dialog that appears:
 
-   - Solution — keep it set to New Solution
-   - Name — replace **TM266-XXX** with your participant ID, for example TM266-001
-   - Agent — click the icon next to the **Select Agent** field to open the **Agent Catalog**
-   - Intent Statement — leave this for the next step
+  1. Solution — keep it set to New Solution
+  2. Name — replace **TM266-XXX-EX3** with your participant ID, for example TM266-001-EX3
+  3. Agent — click the icon next to the **Select Agent** field to open the **Agent Catalog**
+  4. Intent Statement — leave this for the next step
 
  <br>![](/exercises/ex3/images/ex2_1_03_new_solution_dialog.png)
 
@@ -67,7 +63,7 @@ Joule Studio is the development environment within SAP Joule Works where you cre
    
  <br>![](/exercises/ex3/images/ex2_1_03_new_solution_dialog1.png)
 
-6. Review the available Extension Points on the agent detail page — you will see Instruction as this is currently GA. Pre-hooks, Post-hooks, and MCP Servers are planned for release after GA post-TechEd, but we will create the extension using all these extension points to showcase the full process. Next click **Select Agent**.
+6. Review the available Extension Points on the agent detail page — you will see Instruction as this is currently GA. We will create the extension using the Instruction and Tool extension points. Next click **Select Agent**.
 
 <br>![](/exercises/ex3/images/ex2_1_05_extension_points.png)
 
@@ -75,25 +71,28 @@ Joule Studio is the development environment within SAP Joule Works where you cre
 
 After completing these steps you will have submitted your business requirements as a natural language intent statement and triggered the Intent-Based Development (IBD) flow in Joule Studio.
 
-The Intent Statement is the starting point for everything Joule Studio builds. Instead of navigating configuration screens manually, you describe what your extension should do in plain business language. Joule Studio analyzes your input and generates a complete extension specification — including business rules, data connections, and workflow hooks — ready for you to review and refine.
+The Intent Statement is the starting point for everything Joule Studio builds. Instead of navigating configuration screens manually, you describe what your extension should do in plain business language. Joule Studio analyzes your input and generates a complete extension specification — including business rules, data connections — ready for you to review and refine.
 
-1. Back in the Create an Agent Extension dialog, you will now see the **Journal Entry Agent** populated in the **Agent field** and your participant ID in the **Name** field. In the Intent Statement field, copy and paste the following.  Once done, click **Create** to proceed.
+1. Back in the Create an Agent Extension dialog, you will now see the **Journal Entry Agent** populated in the **Agent field** and your participant ID in the **Name** field. In the Intent Statement field, copy and paste the following. Once done, click **Create** to proceed.
 
-Note- Make sure Quick Create is **NOT** selected. Quick Create generates an extension immediately with minimal guidance. Leaving it off activates Intent-Based Development (IBD), which walks you through a structured design flow and produces a richer, more accurate specification based on your input.
+   > **Note:** Make sure Quick Create is **NOT** selected. Quick Create generates an extension immediately with minimal guidance. Leaving it off activates Intent-Based Development (IBD), which walks you through a structured design flow and produces a richer, more accurate specification based on your input.
 
- 
-   > Before processing any journal entry, check if any line item amount exceeds €45. If it does, pause and ask the user for explicit approval before continuing.
-   > 
-   > Once approved, validate the uploaded journal entry proposal against historical journal entry posting patterns in SAP S/4HANA Cloud Public Edition.To do this, query the Universal Journal — the single source of truth    for all financial postings in S/4HANA Cloud — through the MCP tool to retrieve historical posting data. For each line item, compare the combination of Company Code, G/L Account, Cost Center, Profit Center, and Segment with previously posted journal entries.
-   > 
-   >Tag each line as:
-   > - Commonly Used — the accounting combination is frequently used in historical postings
-   > - Rare Pattern — the combination exists but is uncommon or differs from the normal posting pattern
-   > - No Historical Match — no historical posting with the same accounting combination exists
-   > 
-   > For the validation outcome, automatically accept lines tagged as Commonly Used. For Rare Pattern and No Historical Match, provide an explanation and suggest commonly used historical combinations where available.
-   > 
-   > Once validation is complete, generate a local HTML summary file and open it automatically in the browser. The summary shows a color-coded table — green for accepted lines, yellow for rare patterns, red for no historical match — along with the document number, timestamp, and suggestions for any flagged lines.
+   ```
+   Please validate the uploaded journal entry proposal against historical journal entry posting
+   patterns in SAP S/4HANA Cloud Public Edition. To do this, query the Universal Journal — the
+   single source of truth for all financial postings in S/4HANA Cloud — through the MCP tool to
+   retrieve historical posting data. For each line item, compare the combination of Company Code,
+   G/L Account, Cost Center, Profit Center, and Segment with previously posted journal entries.
+
+   Tag each line as:
+   - Commonly Used — the accounting combination is frequently used in historical postings
+   - Rare Pattern — the combination exists but is uncommon or differs from the normal posting pattern
+   - No Historical Match — no historical posting with the same accounting combination exists
+
+   For the validation outcome, automatically accept lines tagged as Commonly Used. For Rare Pattern
+   and No Historical Match, provide an explanation and suggest commonly used historical combinations
+   where available.
+   ```
 
 <br>![](/exercises/ex3/images/ex2_2_01_intent_statement.png)
 
@@ -105,6 +104,7 @@ Note- Make sure Quick Create is **NOT** selected. Quick Create generates an exte
 Once you click Create, Joule Studio takes over — it analyzes your landscape, inspects the existing Journal Entry Agent, and kicks off the Intent-Based Development (IBD) flow. Rather than generating a specification immediately, Joule first asks you a series of focused, value-driven questions to ensure the output is grounded in your specific business context. Work through each question, select the options that best match your use case, and click **Submit Answer** to progress through the flow — Joule will then synthesize your answers into a structured business goals table and a complete Intent Analysis Summary for your final confirmation before writing the specification.
 
 1. Joule Studio begins executing the Intent-Based Development flow — it calls internal tools to analyze your landscape, reads the existing Journal Entry Agent capabilities, and then asks you a series of focused, value-driven questions to sharpen the extension specification. The questions may vary, but below are some examples — read each question carefully and select the options that best fit your use case, then click Submit Answer to proceed.
+
 
 <br>![](/exercises/ex3/images/ex2_3_01.png)
    
@@ -126,7 +126,7 @@ Once the Intent Analysis Summary is confirmed, Joule Studio shifts into a fully 
 
   - The Intent Summary phase is now complete (green checkmark)
   - The flow moves automatically to the Requirements phase
-  - On the right, Joule presents a summary of the confirmed solution approach — the €45 approval gate via Before Hook, historical pattern matching via Universal Journal API, and the color-coded HTML report
+  - On the right, Joule presents a summary of the confirmed solution approach — historical pattern matching via Universal Journal API using the bound MCP tools
   - Joule then asks: "Would you like to proceed to creating the Product Requirements Document (PRD), which will detail all the functional requirements for this extension?"
   - Type Yes in the message box and hit send — this triggers Joule to generate the full PRD and populate the Requirements phase with all functional requirements for your extension
 
@@ -140,14 +140,14 @@ Once the Intent Analysis Summary is confirmed, Joule Studio shifts into a fully 
 
 3. Review the Generated Solution Artifacts
 
-  - The Solution Artifacts phase generates the complete extension package, including the journal-entry-validation-agent-extension with wired Instructions and  Context, validation rules, and Before Hook logic
+  - The Solution Artifacts phase generates the complete extension package, including the journal-entry-validation-agent-extension with wired Instructions and Tool nodes, and validation rules
   - Explore the File tree on the left to browse all generated files and click through the artifacts to understand what Joule has produced
    
 <br>![](/exercises/ex3/images/ex2_3_08.png)
 
 4. Click on extension.yaml in the File tree to inspect the full agent extension definition
    
-   - including the capability instructions, approval gate logic, and  the step-by-step validation rules Joule has generated directly from your intent
+   - including the capability instructions and the step-by-step validation rules Joule has generated directly from your intent
    - Take a moment to read through the file and appreciate how your plain-language intent statement has been translated into a structured, deployable extension
   specification
    
@@ -163,4 +163,6 @@ You've now successfully extended the pre-delivered Journal Entry Agent using int
 The same pattern applies to any pre-delivered SAP agent — giving you a repeatable, low-effort path to tailoring agent behavior for your organization's specific needs — no specialist development skills required.
 
 Happy TechEd:)
+
+Continue to - [Exercise 4 - Extend the Journal Entry Agent: Instructions, Tools & Hooks - Historic Validation Check](../ex4/README.md)
 

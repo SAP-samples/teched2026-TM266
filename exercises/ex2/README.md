@@ -2,6 +2,12 @@
 
 In this exercise, you will create an **Instruction Extension** for the pre-delivered Journal Entry Agent using Joule Studio's Intent-Based Development (IBD) flow. The extension enforces a mandatory disclaimer on every agent response — ensuring users are always informed that the output is AI-generated.
 
+### Where we left off
+
+In Exercise 1, you ran the standard Journal Entry Agent. You submitted a prompt, the agent responded with instructions on how to upload your data, processed the file, and generated a journal entry proposal — with no indication anywhere that the output was AI-generated. The agent did exactly what it was built to do out of the box.
+
+That is the gap this exercise addresses.
+
 ### What you will build
 
 A single-instruction agent extension that injects the following disclaimer at the end of every Journal Entry Agent response:
@@ -187,6 +193,6 @@ You have created an Instruction Extension for the pre-delivered Journal Entry Ag
 
 Your facilitator will now deploy the extension and demonstrate the Journal Entry Agent appending the mandatory disclaimer to every response.
 
-This is the simplest form of an agent extension — a single instruction with no tools or hooks. In Exercise 3, you will see how the same IBD flow handles a much more complex scenario with four extension layers: a pre-hook, a tool integration, an instruction, and a post-hook.
+This is the simplest form of an agent extension — a single instruction with no tools or hooks. In Exercise 3, you will see how the same IBD flow handles a more complex scenario with two extension layers: a tool integration and an instruction. In Exercise 4, you will go further still — adding pre-hooks and post-hooks on top.
 
-Continue to - [Exercise 3 - Extend the Journal Entry Agent: Instructions, Tools & Hooks - Historic Validation Check](../ex3/README.md)
+Continue to - [Exercise 3 - Extend the Journal Entry Agent: Instructions & Tools - Historic Validation Check](../ex3/README.md)
