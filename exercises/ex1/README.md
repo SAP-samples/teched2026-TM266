@@ -94,7 +94,9 @@ After completing these steps you will have submitted a journal entry request to 
    
  <br>![](/exercises/ex1/images/ex1_1_03_prompt_entry.png)
   
-5. Download the sample file from GitHub (placeholder location), save it to your desktop. Open the file and replace the header text **TM266-xxx** with your participant ID — for example, TM266-001 — then verify your data matches the structure shown below before uploading.
+5. Download the sample file below, save it to your desktop. Open the file and replace the header text **TM266-xxx** with your participant ID — for example, TM266-001 — then verify your data matches the structure shown below before uploading.
+
+   📎 [TM266-Journal Entry Data.xlsx](/exercises/ex1/files/TM266-Journal%20Entry%20Data.xlsx)
 
 <br>![](/exercises/ex1/images/ex1_1_04_agent_response2.png)
 

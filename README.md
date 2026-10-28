@@ -33,6 +33,12 @@ Provide the exercise content here directly in README.md using [markdown](https:/
     - [Exercise 3.1 - Access Joule Studio and Create a New Extension](exercises/ex3#exercise-31---access-joule-studio-and-create-a-new-extension)
     - [Exercise 3.2 - Enter Your Intent Statement](exercises/ex3#exercise-32---enter-your-intent-statement)
     - [Exercise 3.3 - Answer Intent Clarification Questions and Review the Generated Specification](exercises/ex3#exercise-33---answer-intent-clarification-questions-and-review-the-generated-specification)
+    - [Exercise 3.4 - Navigate the Solution Progress Flow and Review Generated Artifacts](exercises/ex3#exercise-34---navigate-the-solution-progress-flow-and-review-generated-artifacts)
+- [Exercise 4 - Extend the Journal Entry Agent: Instructions, Tools & Hooks - Historic Validation Check](exercises/ex4/)
+    - [Exercise 4.1 - Access Joule Studio and Create a New Extension](exercises/ex4#exercise-41---access-joule-studio-and-create-a-new-extension)
+    - [Exercise 4.2 - Enter Your Intent Statement](exercises/ex4#exercise-42---enter-your-intent-statement)
+    - [Exercise 4.3 - Answer Intent Clarification Questions and Review the Generated Specification](exercises/ex4#exercise-43---answer-intent-clarification-questions-and-review-the-generated-specification)
+    - [Exercise 4.4 - Navigate the Solution Progress Flow and Review Generated Artifacts](exercises/ex4#exercise-44---navigate-the-solution-progress-flow-and-review-generated-artifacts)
 
 ## Contributing
 Please read the [CONTRIBUTING.md](./CONTRIBUTING.md) to understand the contribution guidelines.

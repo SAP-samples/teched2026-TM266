@@ -193,6 +193,6 @@ You have created an Instruction Extension for the pre-delivered Journal Entry Ag
 
 Your facilitator will now deploy the extension and demonstrate the Journal Entry Agent appending the mandatory disclaimer to every response.
 
-This is the simplest form of an agent extension — a single instruction with no tools or hooks. In Exercise 3, you will see how the same IBD flow handles a much more complex scenario with four extension layers: a pre-hook, a tool integration, an instruction, and a post-hook.
+This is the simplest form of an agent extension — a single instruction with no tools or hooks. In Exercise 3, you will see how the same IBD flow handles a more complex scenario with two extension layers: a tool integration and an instruction. In Exercise 4, you will go further still — adding pre-hooks and post-hooks on top.
 
 Continue to - [Exercise 3 - Extend the Journal Entry Agent: Instructions & Tools - Historic Validation Check](../ex3/README.md)
