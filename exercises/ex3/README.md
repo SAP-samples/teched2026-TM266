@@ -61,7 +61,7 @@ Joule Studio is the development environment within SAP Joule Works where you cre
 
    > **Note:** The Agent Catalog shows all pre-delivered agents available in your landscape that have been published as extensible. Only agents marked as extensible can be extended through Joule Studio.
    
- <br>![](/exercises/ex3/images/ex2_1_03_new_solution_dialo1.png)
+ <br>![](/exercises/ex3/images/ex2_1_03_new_solution_dialog1.png)
 
 6. Review the available Extension Points on the agent detail page — you will see Instruction as this is currently GA. We will create the extension using the Instruction and Tool extension points. Next click **Select Agent**.
 
